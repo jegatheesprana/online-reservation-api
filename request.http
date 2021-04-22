@@ -1,0 +1,24 @@
+# POST http://localhost:8000/rooms/newRoom HTTP/1.1
+# content-type: application/json
+
+# {
+#     "title": "room2",
+#     "number": 2,
+#     "type": "type",
+#     "beds": 2,
+#     "maxOccupancy": 20,
+#     "costPerNight": 2000
+# }
+
+# POST http://localhost:8000/rooms/reserve HTTP/1.1
+# content-type: application/json
+
+# {
+#     "_id": "607ee3a53f78035e346c9f00",
+#     "from": "04/20/2021",
+#     "to": "04/25/2021"
+# }
+
+GET http://localhost:8000/rooms/reservations HTTP/1.1
+
+# DELETE http://localhost:8000/products/6059985c89832f26486db4af HTTP/1.1
