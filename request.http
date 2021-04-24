@@ -19,6 +19,25 @@
 #     "to": "04/25/2021"
 # }
 
-GET http://localhost:8000/rooms/reservations HTTP/1.1
+# GET http://localhost:8000/rooms/reservations HTTP/1.1
 
 # DELETE http://localhost:8000/products/6059985c89832f26486db4af HTTP/1.1
+
+# POST http://localhost:8000/users/register HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "Pranavan",
+#     "email": "jegatheesprana@gmail.com",
+#     "password": "123456"
+# }
+
+# POST http://localhost:8000/users/login HTTP/1.1
+# content-type: application/json
+
+# {
+#     "email": "jegatheesprana@gmail.com",
+#     "password": "123456"
+# }
+
+GET http://localhost:8000/users/currentUser HTTP/1.1

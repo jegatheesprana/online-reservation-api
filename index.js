@@ -4,7 +4,7 @@ const session = require('express-session');
 const passport = require('passport');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const jwt = requie('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // for cross origin request
-app.use(cors())
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 
 // Express session
 app.use(session({
@@ -36,6 +36,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+// set cookie parse
+app.use(cookieParser('secretcode'))
 
 // Passport middleware
 app.use(passport.initialize());

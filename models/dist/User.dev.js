@@ -14,11 +14,11 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  },
-  phone: {
-    type: Number,
-    required: true
-  }
+  } // phone: {
+  //     type: Number,
+  //     required: true
+  // },
+
 });
 var User = mongoose.model('User', UserSchema);
 module.exports = User;

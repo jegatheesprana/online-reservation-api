@@ -12,7 +12,8 @@ var dotenv = require('dotenv');
 
 var cors = require('cors');
 
-var jwt = requie('jsonwebtoken');
+var cookieParser = require('cookie-parser');
+
 var app = express();
 dotenv.config(); // Passport config
 
@@ -36,13 +37,18 @@ app.use(express.urlencoded({
 
 app.use(express.json()); // for cross origin request
 
-app.use(cors()); // Express session
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:3000'
+})); // Express session
 
 app.use(session({
   secret: 'secret',
   resave: true,
   saveUninitialized: true
-})); // Passport middleware
+})); // set cookie parse
+
+app.use(cookieParser('secretcode')); // Passport middleware
 
 app.use(passport.initialize());
 app.use(passport.session()); //jwt
